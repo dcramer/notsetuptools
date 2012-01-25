@@ -13,7 +13,7 @@ by setuptools so that they're actually useable.
 >>> )
 """
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='notsetuptools',
@@ -22,6 +22,6 @@ setup(
     long_description=__doc__,
     author='David Cramer',
     author_email='dcramer@gmail.com',
-    packages={'': 'src'},
+    packages=find_packages(),
     zip_safe=False,
 )
