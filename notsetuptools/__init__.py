@@ -8,6 +8,7 @@ import pkg_resources
 
 __all__ = ('setup',)
 
+
 class install(_install):
     def finalize_options(self):
         _install.finalize_options(self)

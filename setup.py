@@ -5,6 +5,7 @@ notsetuptools
 This package attempts to correct the namespace hacks provided
 by setuptools so that they're actually useable.
 
+>>> from setuptools import find_packages
 >>> from notsetuptools import setup
 >>> setup(
 >>>     namespace_packages=['package'],
@@ -21,6 +22,6 @@ setup(
     long_description=__doc__,
     author='David Cramer',
     author_email='dcramer@gmail.com',
-    packages=['notsetuptools'],
+    packages={'': 'src'},
     zip_safe=False,
 )
