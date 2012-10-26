@@ -17,7 +17,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='notsetuptools',
-    version='0.1',
+    version='0.1.1',
     description='A hack to fix setuptools namespace packages hack.',
     long_description=__doc__,
     author='David Cramer',
