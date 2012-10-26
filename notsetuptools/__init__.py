@@ -2,17 +2,10 @@ from distutils import log
 from distutils.errors import DistutilsError
 from setuptools import setup as setuptools_setup
 from setuptools.command.develop import develop as _develop
-from setuptools.command.install import install as _install
 import os.path
 import pkg_resources
 
-__all__ = ('setup',)
-
-
-class install(_install):
-    def finalize_options(self):
-        _install.finalize_options(self)
-        self.single_version_externally_managed = True
+__all__ = ('develop',)
 
 
 class develop(_develop):
@@ -92,5 +85,4 @@ def setup(*args, **kwargs):
     if 'cmdclass' not in kwargs:
         kwargs['cmdclass'] = {}
     kwargs['cmdclass'].setdefault('develop', develop)
-    kwargs['cmdclass'].setdefault('install', install)
     setuptools_setup(*args, **kwargs)
